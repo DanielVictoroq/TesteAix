@@ -5,7 +5,7 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
-        <div class="card-header">{{ __('Alunos') }}</div>
+        <div class="card-header">{{ __('Cursos') }}<a class="btn btn-outline-primary float-right" href="##" data-toggle="modal" data-target="#modal-xml-create">{{ __('Importar XML') }}</a></div>
         
         <div class="card-body">
           @if (session('status'))

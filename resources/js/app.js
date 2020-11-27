@@ -36,7 +36,41 @@ $(document).ready(function(){
     placeholder: 'todos',
     multiple: true
   });
+  
+  $("#dropzoneForm").dropzone({
+    maxFilesize: 2,
+    maxFiles:1,
+    parallelUploads: 1,
+    url: "/interno/upload-arquivos?type=doc",
+    acceptedFiles:".pdf, .xls, .odt, .doc, .docx, .svg , .png, .jpg, .jpeg",
+    dictDefaultMessage: '<i class="fas fa-upload fa-2x mb-2"></i><p>Solte o documento aqui ou clique para fazer o upload.</p>',
+    dictFileTooBig: 'Arquivo é maior que o permitido (2MB)',
+    dictInvalidFileType: 'Arquivo Inválido!',
+    dictMaxFilesExceeded: 'Quantidade máxima de upload de arquivos excedido',
+    autoProcessQueue: true,
+    addRemoveLinks:true,
+    dictRemoveFile: 'Remover',
+    success: function (response) {
+      $('#success_modal').modal('show')
+      $(".frase_up").text('Upload do documento feito com sucesso!')
+    },
+    error: function(response){
+      if(response.status == "error"){
+        if(response.size > 2000000)
+        $('#modal-error-msg').text('Erro ao enviar arquivo! O arquivo deve ter no máximo 2mb!');  
+      }
+      else if(response.xhr && response.xhr.status == 401)
+      $('#modal-error-msg').text('Erro ao enviar arquivo! Arquivo duplicado!');
+      else
+      $('#modal-error-msg').text('Erro ao enviar arquivo! Formato incorreto!');
+      
+      $('#modal-error').modal('show');
+    }
+  });
+  
 })
+
+
 
 function autoComplete(id, placeholder, rota, multiple = true, minimumInputLength = 0){
   $('#'+id).select2({

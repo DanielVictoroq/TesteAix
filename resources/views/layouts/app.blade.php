@@ -91,3 +91,4 @@
 </body>
 </html>
 @include('alunos.modals.modal-create-aluno')
+@include('cursos.modals.modal-xml-create')

@@ -15,13 +15,13 @@ use App\Http\Controllers\CursosController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/cursos', [App\Http\Controllers\CursosController::class,'index'])->name('cursos');
 Route::get('/cadastrar-aluno', [App\Http\Controllers\AlunoController::class, 'index'])->name('alunos');
 Route::post('/cadastrar-aluno', [App\Http\Controllers\AlunoController::class, 'cadastrarAluno'])->name('cadastrarPost');
