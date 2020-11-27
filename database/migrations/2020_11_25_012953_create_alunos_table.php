@@ -31,11 +31,19 @@ class CreateAlunosTable extends Migration
             $table->string('estado', 500)->nullable();
             $table->timestamps();
         });
+        Schema::create('turmas', function (Blueprint $table) {
+            $table->id();
+            $table->string('turma', 500)->nullable();
+            $table->timestamps();
+        });
 
         Schema::create('alunos', function (Blueprint $table) {
             $table->id();
             $table->string('name', 500)->nullable();
             $table->string('cod_aluno', 100)->nullable();
+            $table->date('dtmatricula')->nullable();
+            $table->bigInteger('turma')->unsigned()->nullable();
+            $table->foreign('turma')->references('id')->on('turmas');
             $table->bigInteger('situacao_id')->unsigned()->nullable();
             $table->foreign('situacao_id')->references('id')->on('situacao_aluno');
             $table->bigInteger('endereco_id')->unsigned()->nullable();

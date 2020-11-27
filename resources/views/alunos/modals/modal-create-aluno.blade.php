@@ -16,16 +16,13 @@
           <label for="form-name-cep">Cep</label>
           <input type="text" class="form-control" name="form-name-cep" id="form-name-cep">
           <label for="form-name-situacao">Situação Aluno</label>
-          <select type="text" class="form-control" name="form-name-situacao" id="form-name-situacao"></select>
-
+          <select type="text" class="form-control"  style="width: 100%" name="form-name-situacao" id="form-name-situacao"></select>
           <label for="form-name-curso">Curso</label>
-          <select type="text" class="form-control" style="width: 100%" name="form-name-curso" id="form-name-curso">
-
-          </select>
+          <select type="text" class="form-control" style="width: 100%" name="form-name-curso" id="form-name-curso"></select>
           <label for="form-name-turma">Turma</label>
-          <select type="text" class="form-control" name="form-name-turma" id="form-name-turma"></select>
+          <input type="text" class="form-control" name="form-name-turma" id="form-name-turma">
           <label for="form-name-dt">Data da Mátricula</label>
-          <select type="text" class="form-control" name="form-name-dt" id=""></select>
+          <input type="text" class="form-control" name="form-name-dt" id="form-name-dt">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Fechar</button>

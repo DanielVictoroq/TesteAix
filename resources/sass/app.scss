@@ -6,3 +6,41 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+@import  'node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import  'node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
+@import  'node_modules/@fortawesome/fontawesome-free/scss/regular.scss';
+@import  'node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
+@import 'dropzone.scss';
+@import 'icons.scss';
+
+
+.dz-remove{
+    margin-top:10px;
+    color:red;
+    font-size: 16px !important;
+    &:hover{
+        color:red;
+    }
+}
+
+.dropzone{
+    min-height: 200px !important;
+    max-height: none !important;
+    .dz-preview {
+        margin: 10px !important;
+        font-size: 14px;
+    }
+    .dz-message{
+        margin: 15% 0 !important;
+        text-align: center;
+        p{
+            margin:0 ;
+            display: none;
+        }
+    }
+}
+.bt_comp{
+    display: flex;
+    align-items: center;
+}
