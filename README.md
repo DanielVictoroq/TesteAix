@@ -1,6 +1,6 @@
 ## Instalar Projeto
-composer install
-php artisan migrate
-php artisan insert:situacao
-npm install
-npm run dev
+<p>composer install</p>
+<p>php artisan migrate</p>
+<p>php artisan insert:situacao</p>
+<p>npm install</p>
+<p>npm run dev</p>
