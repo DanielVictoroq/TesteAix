@@ -19242,6 +19242,12 @@ body.swal2-no-backdrop .swal2-shown.swal2-bottom-right {
   }
 }
 
+svg {
+  width: 120px;
+  height: auto;
+  margin: auto;
+}
+
 .dz-remove {
   margin-top: 10px;
   color: red;

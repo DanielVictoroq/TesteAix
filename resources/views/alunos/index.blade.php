@@ -5,7 +5,11 @@
   <div class="row justify-content-center">
     <div class="col-md-12">
       <div class="card">
-        <div class="card-header align-items-center d-flex justify-content-between">{{ __('Alunos') }}<a class="btn btn-outline-primary float-right" href="##" data-toggle="modal" data-target="#modal-aluno-create">{{ __('Novo Aluno') }}</a></div>
+        <div class="card-header align-items-center d-flex justify-content-between">{{ __('Alunos') }}
+          <div class="float-right">
+            <a class="btn btn-outline-primary float-right" href="##" data-toggle="modal" data-target="#modal-aluno-create">{{ __('Novo Aluno') }}</a>
+          </div>
+        </div>
         
         <div class="card-body">
           <table id="alunos_id" class="table table-bordered text-center">
@@ -26,7 +30,6 @@
               <th>#</th>
             </thead>
           </table>
-          
         </div>
       </div>
     </div>

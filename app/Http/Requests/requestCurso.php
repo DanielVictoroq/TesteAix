@@ -13,7 +13,7 @@ class requestCurso extends FormRequest
         
         return [
             'form_codigo_curso' => 'required',
-            'form_name_curso' => 'required',
+            'form_curso' => 'required',
         ];
         
     }

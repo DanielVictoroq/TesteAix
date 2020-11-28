@@ -95,7 +95,9 @@
 </body>
 </html>
 @include('alunos.modals.modal-create-aluno')
+@include('alunos.modals.modal-img-create')
 @include('cursos.modals.modal-xml-create')
 @include('cursos.modals.modal-curso-create')
 @include('layouts.modals.modal-success')
 @include('layouts.modals.modal-error')
+@include('layouts.modals.loading')

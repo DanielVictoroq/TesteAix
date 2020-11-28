@@ -12,6 +12,8 @@ $(document).ready(function(){
 function ajaxSubmitCurso(){
   $("#form-curso-create").submit(function(e){
     e.preventDefault()
+    $('#loading').modal('show');
+    $('#modal-curso-create').modal('hide')
     $.ajax({
       type:'post',
       url:'/salvarCurso',
@@ -19,9 +21,9 @@ function ajaxSubmitCurso(){
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
       },
-      async: false,
+      async: true,
       success(response){
-        $('#modal-curso-create').modal('hide')
+        $('#loading').modal('hide');
         if(response.code){            
           $('#modal-error').modal('show')
           $('.frase_up').text(response.message)
@@ -31,7 +33,8 @@ function ajaxSubmitCurso(){
           $('.frase_up').text(response.message)
         }
       },error(response){
-        
+        $('#modal-curso-create').modal('show')
+        $('#loading').modal('hide');
         if(response.status === 422){
           var obj = response.responseJSON.errors;
           if(obj.hasOwnProperty('form_codigo_curso')){
@@ -42,8 +45,8 @@ function ajaxSubmitCurso(){
             $('#error_modal_curso').html(html)
           }else{
             var html ='';
-            for(index in obj.form_name_curso){
-              html += '<span>'+obj.form_name_curso[index]+'</span> <br>'
+            for(index in obj.form_curso){
+              html += '<span>'+obj.form_curso[index]+'</span> <br>'
             }
             $('#error_modal_curso').html(html)
             
@@ -125,6 +128,7 @@ function datatableCursos(){
 
 function editCurso(){
   $('.curso_edit').click(function(){
+    $('#loading').modal('show');
     $.ajax({
       type:'get',
       url:'/getCurso',
@@ -134,12 +138,13 @@ function editCurso(){
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
       },
-      async: false,
+      async: true,
       success(response){
-        $('#form_name_curso').val(response.name)
+        $('#loading').modal('hide')
+        $('#modal-curso-create').modal('show')
+        $('#form_curso').val(response.name)
         $('#form_codigo_curso').val(response.cod_curso)
         $('#curso_id_edit').val(response.id)
-        $('#modal-curso-create').modal('show')
       }
     }); 
   })
@@ -147,6 +152,7 @@ function editCurso(){
 
 function excluirCurso(){
   $('.curso_trash').click(function(){
+    $('#loading').modal('show');
     $.ajax({
       type:'delete',
       url:'/deleteCurso',
@@ -156,7 +162,7 @@ function excluirCurso(){
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
       },
-      async: false,
+      async: true,
       success(response){
         location.reload()
       }

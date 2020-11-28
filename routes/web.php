@@ -17,6 +17,7 @@ use App\Http\Controllers\CursosController;
 
 Auth::routes();
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/cursos', [App\Http\Controllers\CursosController::class,'index'])->name('cursos');
@@ -28,10 +29,11 @@ Route::post('/upload-xml', [App\Http\Controllers\CursosController::class, 'uploa
 Route::post('/salvarCurso', [App\Http\Controllers\CursosController::class, 'salvarCurso'])->name('salvarCurso');
 
 Route::get('/autoCompleteSituacao', [App\Http\Controllers\AlunoController::class, 'autoCompleteSituacao'])->name('autoCompleteSituacao');
-Route::get('/cadastrar-aluno', [App\Http\Controllers\AlunoController::class, 'index'])->name('alunos');
+Route::get('/alunos', [App\Http\Controllers\AlunoController::class, 'index'])->name('alunos');
 Route::get('/datatableAlunos', [App\Http\Controllers\AlunoController::class, 'datatableAlunos'])->name('datatableAlunos');
 Route::get('/getAluno', [App\Http\Controllers\AlunoController::class, 'getAluno'])->name('getAluno');
-Route::post('/cadastrar-aluno', [App\Http\Controllers\AlunoController::class, 'cadastrarAluno'])->name('cadastrarPost');
+Route::post('/upload-imagens', [App\Http\Controllers\AlunoController::class, 'uploadImagens'])->name('uploadImagens');
+Route::post('/salvarAluno', [App\Http\Controllers\AlunoController::class, 'salvarAluno'])->name('salvarAluno');
 Route::delete('/deleteAluno', [App\Http\Controllers\AlunoController::class, 'deleteAluno'])->name('deleteAluno');
 
 

@@ -9,8 +9,18 @@ class requestAluno extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'form_name_codigo' => 'required|'.Rule::unique('cursos', 'cod_curso')->where('cod_curso', $this->form_name_codigo),
+            'form_name_aluno' => 'required',
+            'form_name_codigo' => 'required',
+            'form_name_situacao' => 'required',
+            'form_name_curso' => 'required',
+            'form_name_turma' => 'required',
+            'form_name_dt' => 'required',
+            'form_name_cep' => 'required',
+            'form_name_rua' => 'required',
+            'form_name_bairro' => 'required',
+            'form_name_cidade' => 'required',
+            'form_name_estado' => 'required',
+            'form_name_numero' => 'required',
         ];
     }
 
@@ -18,7 +28,6 @@ class requestAluno extends FormRequest
     {
         return [
             'required'   =>  'Deve-se preencher todos os campos para continuar',
-            'form_name_codigo.unique' => 'Código já cadastrado no sistema.',
         ];
     }
 }

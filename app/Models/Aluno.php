@@ -19,15 +19,26 @@ class Aluno extends Model
     }
 
     public static function getAlunos(){
-        return self::selectRaw('alunos.id as id, alunos.name, alunos.cod_aluno, alunos.dtmatricula')
-        ->selectRaw('endereco.cep, endereco.rua, endereco.numero, endereco.complemento, endereco.bairro, endereco.cidade, endereco.estado')
-        ->selectRaw('situacao_aluno.situacao')
+        return self::selectRaw('alunos.id as id, alunos.name, alunos.cod_aluno,date_format(alunos.dtmatricula, "%d/%m/%Y") as dtmatricula, alunos.endereco_id')
+        ->selectRaw('enderecos.cep, enderecos.rua, enderecos.numero, enderecos.complemento, enderecos.bairro, enderecos.cidade, enderecos.estado')
+        ->selectRaw('situacao_aluno.situacao, alunos.situacao_id, alunos.curso_id')
         ->selectRaw('cursos.name as curso')
-        ->selectRaw('turmas.turma')
-        ->join('endereco', 'endereco.id', 'alunos.endereco_id')
+        ->selectRaw('alunos.turma')
+        ->join('enderecos', 'enderecos.id', 'alunos.endereco_id')
         ->join('situacao_aluno', 'situacao_aluno.id', 'alunos.situacao_id')
         ->join('cursos', 'cursos.id', 'alunos.curso_id')
-        ->join('turmas', 'turmas.id', 'alunos.turma')
         ->get();
+    }
+    public static function getAluno($id){
+        return self::selectRaw('alunos.id as id, alunos.name, alunos.cod_aluno, date_format(alunos.dtmatricula, "%d/%m/%Y") as dtmatricula, alunos.endereco_id')
+        ->selectRaw('enderecos.cep, enderecos.rua, enderecos.numero, enderecos.complemento, enderecos.bairro, enderecos.cidade, enderecos.estado')
+        ->selectRaw('situacao_aluno.situacao, alunos.situacao_id, alunos.curso_id')
+        ->selectRaw('cursos.name as curso')
+        ->selectRaw('alunos.turma')
+        ->join('enderecos', 'enderecos.id', 'alunos.endereco_id')
+        ->join('situacao_aluno', 'situacao_aluno.id', 'alunos.situacao_id')
+        ->join('cursos', 'cursos.id', 'alunos.curso_id')
+        ->where('alunos.id', $id)
+        ->first();
     }
 }

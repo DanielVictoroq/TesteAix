@@ -16,6 +16,7 @@ mix.js([
     'node_modules/moment/moment.js',
     'node_modules/dropzone/dist/dropzone.js',
     'node_modules/datatables.net/js/jquery.dataTables.js',
+    'node_modules/jquery-mask-plugin/dist/jquery.mask.min.js',
     'resources/js/aluno.js',
     'resources/js/curso.js',
     'resources/js/app.js'], 'public/js/app.js')

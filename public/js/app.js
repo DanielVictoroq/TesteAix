@@ -25258,6 +25258,40 @@ function __guardMethod__(obj, methodName, transform) {
 
 /***/ }),
 
+/***/ "./node_modules/jquery-mask-plugin/dist/jquery.mask.min.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/jquery-mask-plugin/dist/jquery.mask.min.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global, __webpack_provided_window_dot_jQuery) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// jQuery Mask Plugin v1.14.16
+// github.com/igorescobar/jQuery-Mask-Plugin
+var $jscomp=$jscomp||{};$jscomp.scope={};$jscomp.findInternal=function(a,n,f){a instanceof String&&(a=String(a));for(var p=a.length,k=0;k<p;k++){var b=a[k];if(n.call(f,b,k,a))return{i:k,v:b}}return{i:-1,v:void 0}};$jscomp.ASSUME_ES5=!1;$jscomp.ASSUME_NO_NATIVE_MAP=!1;$jscomp.ASSUME_NO_NATIVE_SET=!1;$jscomp.SIMPLE_FROUND_POLYFILL=!1;
+$jscomp.defineProperty=$jscomp.ASSUME_ES5||"function"==typeof Object.defineProperties?Object.defineProperty:function(a,n,f){a!=Array.prototype&&a!=Object.prototype&&(a[n]=f.value)};$jscomp.getGlobal=function(a){return"undefined"!=typeof window&&window===a?a:"undefined"!=typeof global&&null!=global?global:a};$jscomp.global=$jscomp.getGlobal(this);
+$jscomp.polyfill=function(a,n,f,p){if(n){f=$jscomp.global;a=a.split(".");for(p=0;p<a.length-1;p++){var k=a[p];k in f||(f[k]={});f=f[k]}a=a[a.length-1];p=f[a];n=n(p);n!=p&&null!=n&&$jscomp.defineProperty(f,a,{configurable:!0,writable:!0,value:n})}};$jscomp.polyfill("Array.prototype.find",function(a){return a?a:function(a,f){return $jscomp.findInternal(this,a,f).v}},"es6","es3");
+(function(a,n,f){ true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")], __WEBPACK_AMD_DEFINE_FACTORY__ = (a),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):undefined})(function(a){var n=function(b,d,e){var c={invalid:[],getCaret:function(){try{var a=0,r=b.get(0),h=document.selection,d=r.selectionStart;if(h&&-1===navigator.appVersion.indexOf("MSIE 10")){var e=h.createRange();e.moveStart("character",-c.val().length);a=e.text.length}else if(d||"0"===d)a=d;return a}catch(C){}},setCaret:function(a){try{if(b.is(":focus")){var c=
+b.get(0);if(c.setSelectionRange)c.setSelectionRange(a,a);else{var g=c.createTextRange();g.collapse(!0);g.moveEnd("character",a);g.moveStart("character",a);g.select()}}}catch(B){}},events:function(){b.on("keydown.mask",function(a){b.data("mask-keycode",a.keyCode||a.which);b.data("mask-previus-value",b.val());b.data("mask-previus-caret-pos",c.getCaret());c.maskDigitPosMapOld=c.maskDigitPosMap}).on(a.jMaskGlobals.useInput?"input.mask":"keyup.mask",c.behaviour).on("paste.mask drop.mask",function(){setTimeout(function(){b.keydown().keyup()},
+100)}).on("change.mask",function(){b.data("changed",!0)}).on("blur.mask",function(){f===c.val()||b.data("changed")||b.trigger("change");b.data("changed",!1)}).on("blur.mask",function(){f=c.val()}).on("focus.mask",function(b){!0===e.selectOnFocus&&a(b.target).select()}).on("focusout.mask",function(){e.clearIfNotMatch&&!k.test(c.val())&&c.val("")})},getRegexMask:function(){for(var a=[],b,c,e,t,f=0;f<d.length;f++)(b=l.translation[d.charAt(f)])?(c=b.pattern.toString().replace(/.{1}$|^.{1}/g,""),e=b.optional,
+(b=b.recursive)?(a.push(d.charAt(f)),t={digit:d.charAt(f),pattern:c}):a.push(e||b?c+"?":c)):a.push(d.charAt(f).replace(/[-\/\\^$*+?.()|[\]{}]/g,"\\$&"));a=a.join("");t&&(a=a.replace(new RegExp("("+t.digit+"(.*"+t.digit+")?)"),"($1)?").replace(new RegExp(t.digit,"g"),t.pattern));return new RegExp(a)},destroyEvents:function(){b.off("input keydown keyup paste drop blur focusout ".split(" ").join(".mask "))},val:function(a){var c=b.is("input")?"val":"text";if(0<arguments.length){if(b[c]()!==a)b[c](a);
+c=b}else c=b[c]();return c},calculateCaretPosition:function(a){var d=c.getMasked(),h=c.getCaret();if(a!==d){var e=b.data("mask-previus-caret-pos")||0;d=d.length;var g=a.length,f=a=0,l=0,k=0,m;for(m=h;m<d&&c.maskDigitPosMap[m];m++)f++;for(m=h-1;0<=m&&c.maskDigitPosMap[m];m--)a++;for(m=h-1;0<=m;m--)c.maskDigitPosMap[m]&&l++;for(m=e-1;0<=m;m--)c.maskDigitPosMapOld[m]&&k++;h>g?h=10*d:e>=h&&e!==g?c.maskDigitPosMapOld[h]||(e=h,h=h-(k-l)-a,c.maskDigitPosMap[h]&&(h=e)):h>e&&(h=h+(l-k)+f)}return h},behaviour:function(d){d=
+d||window.event;c.invalid=[];var e=b.data("mask-keycode");if(-1===a.inArray(e,l.byPassKeys)){e=c.getMasked();var h=c.getCaret(),g=b.data("mask-previus-value")||"";setTimeout(function(){c.setCaret(c.calculateCaretPosition(g))},a.jMaskGlobals.keyStrokeCompensation);c.val(e);c.setCaret(h);return c.callbacks(d)}},getMasked:function(a,b){var h=[],f=void 0===b?c.val():b+"",g=0,k=d.length,n=0,p=f.length,m=1,r="push",u=-1,w=0;b=[];if(e.reverse){r="unshift";m=-1;var x=0;g=k-1;n=p-1;var A=function(){return-1<
+g&&-1<n}}else x=k-1,A=function(){return g<k&&n<p};for(var z;A();){var y=d.charAt(g),v=f.charAt(n),q=l.translation[y];if(q)v.match(q.pattern)?(h[r](v),q.recursive&&(-1===u?u=g:g===x&&g!==u&&(g=u-m),x===u&&(g-=m)),g+=m):v===z?(w--,z=void 0):q.optional?(g+=m,n-=m):q.fallback?(h[r](q.fallback),g+=m,n-=m):c.invalid.push({p:n,v:v,e:q.pattern}),n+=m;else{if(!a)h[r](y);v===y?(b.push(n),n+=m):(z=y,b.push(n+w),w++);g+=m}}a=d.charAt(x);k!==p+1||l.translation[a]||h.push(a);h=h.join("");c.mapMaskdigitPositions(h,
+b,p);return h},mapMaskdigitPositions:function(a,b,d){a=e.reverse?a.length-d:0;c.maskDigitPosMap={};for(d=0;d<b.length;d++)c.maskDigitPosMap[b[d]+a]=1},callbacks:function(a){var g=c.val(),h=g!==f,k=[g,a,b,e],l=function(a,b,c){"function"===typeof e[a]&&b&&e[a].apply(this,c)};l("onChange",!0===h,k);l("onKeyPress",!0===h,k);l("onComplete",g.length===d.length,k);l("onInvalid",0<c.invalid.length,[g,a,b,c.invalid,e])}};b=a(b);var l=this,f=c.val(),k;d="function"===typeof d?d(c.val(),void 0,b,e):d;l.mask=
+d;l.options=e;l.remove=function(){var a=c.getCaret();l.options.placeholder&&b.removeAttr("placeholder");b.data("mask-maxlength")&&b.removeAttr("maxlength");c.destroyEvents();c.val(l.getCleanVal());c.setCaret(a);return b};l.getCleanVal=function(){return c.getMasked(!0)};l.getMaskedVal=function(a){return c.getMasked(!1,a)};l.init=function(g){g=g||!1;e=e||{};l.clearIfNotMatch=a.jMaskGlobals.clearIfNotMatch;l.byPassKeys=a.jMaskGlobals.byPassKeys;l.translation=a.extend({},a.jMaskGlobals.translation,e.translation);
+l=a.extend(!0,{},l,e);k=c.getRegexMask();if(g)c.events(),c.val(c.getMasked());else{e.placeholder&&b.attr("placeholder",e.placeholder);b.data("mask")&&b.attr("autocomplete","off");g=0;for(var f=!0;g<d.length;g++){var h=l.translation[d.charAt(g)];if(h&&h.recursive){f=!1;break}}f&&b.attr("maxlength",d.length).data("mask-maxlength",!0);c.destroyEvents();c.events();g=c.getCaret();c.val(c.getMasked());c.setCaret(g)}};l.init(!b.is("input"))};a.maskWatchers={};var f=function(){var b=a(this),d={},e=b.attr("data-mask");
+b.attr("data-mask-reverse")&&(d.reverse=!0);b.attr("data-mask-clearifnotmatch")&&(d.clearIfNotMatch=!0);"true"===b.attr("data-mask-selectonfocus")&&(d.selectOnFocus=!0);if(p(b,e,d))return b.data("mask",new n(this,e,d))},p=function(b,d,e){e=e||{};var c=a(b).data("mask"),f=JSON.stringify;b=a(b).val()||a(b).text();try{return"function"===typeof d&&(d=d(b)),"object"!==typeof c||f(c.options)!==f(e)||c.mask!==d}catch(w){}},k=function(a){var b=document.createElement("div");a="on"+a;var e=a in b;e||(b.setAttribute(a,
+"return;"),e="function"===typeof b[a]);return e};a.fn.mask=function(b,d){d=d||{};var e=this.selector,c=a.jMaskGlobals,f=c.watchInterval;c=d.watchInputs||c.watchInputs;var k=function(){if(p(this,b,d))return a(this).data("mask",new n(this,b,d))};a(this).each(k);e&&""!==e&&c&&(clearInterval(a.maskWatchers[e]),a.maskWatchers[e]=setInterval(function(){a(document).find(e).each(k)},f));return this};a.fn.masked=function(a){return this.data("mask").getMaskedVal(a)};a.fn.unmask=function(){clearInterval(a.maskWatchers[this.selector]);
+delete a.maskWatchers[this.selector];return this.each(function(){var b=a(this).data("mask");b&&b.remove().removeData("mask")})};a.fn.cleanVal=function(){return this.data("mask").getCleanVal()};a.applyDataMask=function(b){b=b||a.jMaskGlobals.maskElements;(b instanceof a?b:a(b)).filter(a.jMaskGlobals.dataMaskAttr).each(f)};k={maskElements:"input,td,span,div",dataMaskAttr:"*[data-mask]",dataMask:!0,watchInterval:300,watchInputs:!0,keyStrokeCompensation:10,useInput:!/Chrome\/[2-4][0-9]|SamsungBrowser/.test(window.navigator.userAgent)&&
+k("input"),watchDataMask:!1,byPassKeys:[9,16,17,18,36,37,38,39,40,91],translation:{0:{pattern:/\d/},9:{pattern:/\d/,optional:!0},"#":{pattern:/\d/,recursive:!0},A:{pattern:/[a-zA-Z0-9]/},S:{pattern:/[a-zA-Z]/}}};a.jMaskGlobals=a.jMaskGlobals||{};k=a.jMaskGlobals=a.extend(!0,{},k,a.jMaskGlobals);k.dataMask&&a.applyDataMask();setInterval(function(){a.jMaskGlobals.watchDataMask&&a.applyDataMask()},k.watchInterval)},__webpack_provided_window_dot_jQuery,window.Zepto);
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
 /***/ "./node_modules/jquery/dist/jquery.js":
 /*!********************************************!*\
   !*** ./node_modules/jquery/dist/jquery.js ***!
@@ -90211,9 +90245,91 @@ module.exports = function(module) {
 /* WEBPACK VAR INJECTION */(function($) {$(document).ready(function () {
   datatableAlunos();
   ajaxSubmitAluno();
-  autoComplete('form-name-curso', 'Cursos', '/autoCompleteCursos', false);
-  autoComplete('form-name-situacao', 'Situação', '/autoCompleteSituacao', false);
+  dropzoneCreate();
+  autoComplete('form_name_curso', 'Cursos', '/autoCompleteCursos', false);
+  autoComplete('form_name_situacao', 'Situação', '/autoCompleteSituacao', false);
+  $('#form_name_cep').change(function () {
+    viaCepAjax();
+  });
+  $("#form_name_cep").mask('99.999-999');
+  $("#form_name_dt").mask('99/99/9999');
 });
+
+function dropzoneCreate() {
+  $("#dropzoneImg").dropzone({
+    maxFilesize: 2,
+    maxFiles: 1,
+    parallelUploads: 1,
+    url: "/upload-imagens",
+    acceptedFiles: ".jpg, .png",
+    dictDefaultMessage: '<i class="fas fa-upload fa-2x mb-2"></i><p>Solte o documento aqui ou clique para fazer o upload.</p>',
+    dictFileTooBig: 'Arquivo é maior que o permitido (2MB)',
+    dictInvalidFileType: 'Arquivo Inválido!',
+    dictMaxFilesExceeded: 'Quantidade máxima de upload de arquivos excedido',
+    autoProcessQueue: true,
+    addRemoveLinks: true,
+    dictRemoveFile: 'Remover',
+    success: function success(response) {
+      $('#loading').modal('hide');
+      $('#modal-img-create').modal('hide');
+      $('#success_modal').modal('show');
+      $(".frase_up").text('Upload efetuado com sucesso!');
+    },
+    error: function error(response) {
+      $('#loading').modal('hide');
+      $('#modal-img-create').modal('hide');
+
+      if (response.status == "error") {
+        if (response.size > 2000000) $(".frase_up").text('Erro ao enviar arquivo! O arquivo deve ter no máximo 2mb!');
+      } else if (response.xhr && response.xhr.status == 401) $(".frase_up").text('Erro ao enviar arquivo! Arquivo duplicado!');else $(".frase_up").text('Erro ao enviar arquivo! Formato incorreto!');
+
+      $('#modal-error').modal('show');
+    }
+  });
+}
+
+function viaCepAjax() {
+  $("#form_name_cep").blur(function () {
+    var cep = $(this).val().replace(/\D/g, '');
+
+    if (cep != "") {
+      var validacep = /^[0-9]{8}$/;
+
+      if (validacep.test(cep)) {
+        $('#loading').modal('show');
+        $.ajax({
+          type: 'GET',
+          url: "https://viacep.com.br/ws/" + cep + "/json/?callback=?",
+          async: true,
+          dataType: 'json',
+          success: function success(dados) {
+            $('.alert').addClass('hidden');
+
+            if (!dados.erro) {
+              $('#loading').modal('hide');
+              $("#form_name_rua").val(dados.logradouro);
+              $("#form_name_bairro").val(dados.bairro);
+              $("#form_name_cidade").val(dados.localidade);
+              $("#form_name_estado").val(dados.uf);
+              $('#form_name_numero').focus();
+            } else {
+              $("#form_name_rua").removeAttr('readonly');
+              $("#form_name_bairro").removeAttr('readonly');
+              $("#form_name_cidade").removeAttr('readonly');
+              $("#form_name_estado").removeAttr('readonly');
+              $('#loading').modal('hide');
+              $('.alert').removeClass('hidden');
+              $('.alert').text("CEP não encontrado.");
+            }
+          }
+        });
+      } else {
+        $('.alert').removeClass('hidden');
+        $('.alert').text("Formato de CEP inválido");
+      }
+    }
+  });
+}
 
 function autoComplete(id, placeholder, rota) {
   var multiple = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
@@ -90248,6 +90364,7 @@ function autoComplete(id, placeholder, rota) {
 
 function ajaxSubmitAluno() {
   $("#form-aluno-create").submit(function (e) {
+    $('#loading').modal('show');
     e.preventDefault();
     $.ajax({
       type: 'post',
@@ -90256,8 +90373,9 @@ function ajaxSubmitAluno() {
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       },
-      async: false,
+      async: true,
       success: function success(response) {
+        $('#loading').modal('hide');
         $('#modal-aluno-create').modal('hide');
 
         if (response.code) {
@@ -90270,27 +90388,8 @@ function ajaxSubmitAluno() {
         }
       },
       error: function error(response) {
-        if (response.status === 422) {
-          var obj = response.responseJSON.errors;
-
-          if (obj.hasOwnProperty('form_codigo_curso')) {
-            var html = '';
-
-            for (index in obj.form_codigo_curso) {
-              html += '<span>' + obj.form_codigo_curso[index] + '</span> <br>';
-            }
-
-            $('#error_modal_curso').html(html);
-          } else {
-            var html = '';
-
-            for (index in obj.form_name_curso) {
-              html += '<span>' + obj.form_name_curso[index] + '</span> <br>';
-            }
-
-            $('#error_modal_curso').html(html);
-          }
-        }
+        $('#loading').modal('hide');
+        $('#error_modal_aluno').text('Deve-se preencher todos os campos para continuar.');
       }
     });
   });
@@ -90366,26 +90465,44 @@ function datatableAlunos() {
     drawCallback: function drawCallback(settings) {
       editaluno();
       excluirAluno();
+      $('.img_upload').click(function () {
+        $('#id_aluno').val($(this).data('id'));
+        $('#modal-img-create').modal('show');
+      });
     }
   });
 }
 
 function editaluno() {
   $('.aluno_edit').click(function () {
+    $('#loading').modal('show');
     $.ajax({
       type: 'get',
-      url: '/getaluno',
+      url: '/getAluno',
       data: {
         id: $(this).data('id')
       },
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       },
-      async: false,
+      async: true,
       success: function success(response) {
+        $('#loading').modal('hide');
         $('#form_name_aluno').val(response.name);
-        $('#form_codigo_aluno').val(response.cod_aluno);
+        $('#form_name_codigo').val(response.cod_aluno);
+        $('#form_name_situacao').val(response.situacao_id).trigger('change');
+        $('#form_name_curso').val(response.curso_id).trigger('change');
+        $('#form_name_turma').val(response.turma);
+        $('#form_name_dt').val(response.dtmatricula).trigger('input');
+        $('#form_name_cep').val(response.cep);
+        $('#form_name_rua').val(response.rua);
+        $('#form_name_bairro').val(response.bairro);
+        $('#form_name_cidade').val(response.cidade);
+        $('#form_name_estado').val(response.estado);
+        $('#form_name_numero').val(response.numero);
+        $('#form_name_comp').val(response.complemento);
         $('#aluno_id_edit').val(response.id);
+        $('#endereco_id_edit').val(response.endereco_id);
         $('#modal-aluno-create').modal('show');
       }
     });
@@ -90394,6 +90511,7 @@ function editaluno() {
 
 function excluirAluno() {
   $('.aluno_trash').click(function () {
+    $('#loading').modal('show');
     $.ajax({
       type: 'delete',
       url: '/deleteAluno',
@@ -90588,6 +90706,8 @@ __webpack_require__.r(__webpack_exports__);
 function ajaxSubmitCurso() {
   $("#form-curso-create").submit(function (e) {
     e.preventDefault();
+    $('#loading').modal('show');
+    $('#modal-curso-create').modal('hide');
     $.ajax({
       type: 'post',
       url: '/salvarCurso',
@@ -90595,9 +90715,9 @@ function ajaxSubmitCurso() {
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       },
-      async: false,
+      async: true,
       success: function success(response) {
-        $('#modal-curso-create').modal('hide');
+        $('#loading').modal('hide');
 
         if (response.code) {
           $('#modal-error').modal('show');
@@ -90609,6 +90729,9 @@ function ajaxSubmitCurso() {
         }
       },
       error: function error(response) {
+        $('#modal-curso-create').modal('show');
+        $('#loading').modal('hide');
+
         if (response.status === 422) {
           var obj = response.responseJSON.errors;
 
@@ -90623,8 +90746,8 @@ function ajaxSubmitCurso() {
           } else {
             var html = '';
 
-            for (index in obj.form_name_curso) {
-              html += '<span>' + obj.form_name_curso[index] + '</span> <br>';
+            for (index in obj.form_curso) {
+              html += '<span>' + obj.form_curso[index] + '</span> <br>';
             }
 
             $('#error_modal_curso').html(html);
@@ -90710,6 +90833,7 @@ function datatableCursos() {
 
 function editCurso() {
   $('.curso_edit').click(function () {
+    $('#loading').modal('show');
     $.ajax({
       type: 'get',
       url: '/getCurso',
@@ -90719,12 +90843,13 @@ function editCurso() {
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       },
-      async: false,
+      async: true,
       success: function success(response) {
-        $('#form_name_curso').val(response.name);
+        $('#loading').modal('hide');
+        $('#modal-curso-create').modal('show');
+        $('#form_curso').val(response.name);
         $('#form_codigo_curso').val(response.cod_curso);
         $('#curso_id_edit').val(response.id);
-        $('#modal-curso-create').modal('show');
       }
     });
   });
@@ -90732,6 +90857,7 @@ function editCurso() {
 
 function excluirCurso() {
   $('.curso_trash').click(function () {
+    $('#loading').modal('show');
     $.ajax({
       type: 'delete',
       url: '/deleteCurso',
@@ -90741,7 +90867,7 @@ function excluirCurso() {
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       },
-      async: false,
+      async: true,
       success: function success(response) {
         location.reload();
       }
@@ -90764,9 +90890,9 @@ function excluirCurso() {
 /***/ }),
 
 /***/ 0:
-/*!******************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./node_modules/select2/dist/js/select2.min.js ./node_modules/moment/moment.js ./node_modules/dropzone/dist/dropzone.js ./node_modules/datatables.net/js/jquery.dataTables.js ./resources/js/aluno.js ./resources/js/curso.js ./resources/js/app.js ./resources/sass/app.scss ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************/
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./node_modules/select2/dist/js/select2.min.js ./node_modules/moment/moment.js ./node_modules/dropzone/dist/dropzone.js ./node_modules/datatables.net/js/jquery.dataTables.js ./node_modules/jquery-mask-plugin/dist/jquery.mask.min.js ./resources/js/aluno.js ./resources/js/curso.js ./resources/js/app.js ./resources/sass/app.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -90774,6 +90900,7 @@ __webpack_require__(/*! C:\xampp\htdocs\TesteAix\node_modules\select2\dist\js\se
 __webpack_require__(/*! C:\xampp\htdocs\TesteAix\node_modules\moment\moment.js */"./node_modules/moment/moment.js");
 __webpack_require__(/*! C:\xampp\htdocs\TesteAix\node_modules\dropzone\dist\dropzone.js */"./node_modules/dropzone/dist/dropzone.js");
 __webpack_require__(/*! C:\xampp\htdocs\TesteAix\node_modules\datatables.net\js\jquery.dataTables.js */"./node_modules/datatables.net/js/jquery.dataTables.js");
+__webpack_require__(/*! C:\xampp\htdocs\TesteAix\node_modules\jquery-mask-plugin\dist\jquery.mask.min.js */"./node_modules/jquery-mask-plugin/dist/jquery.mask.min.js");
 __webpack_require__(/*! C:\xampp\htdocs\TesteAix\resources\js\aluno.js */"./resources/js/aluno.js");
 __webpack_require__(/*! C:\xampp\htdocs\TesteAix\resources\js\curso.js */"./resources/js/curso.js");
 __webpack_require__(/*! C:\xampp\htdocs\TesteAix\resources\js\app.js */"./resources/js/app.js");

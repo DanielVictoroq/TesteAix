@@ -48,7 +48,7 @@ class CursosController extends Controller
             }
             $curso = new Curso;
         }
-        $curso->name = $request->input('form_name_curso');
+        $curso->name = $request->input('form_curso');
         $curso->cod_curso = $request->input('form_codigo_curso');
         try{
             $curso->save();

@@ -11,9 +11,9 @@
         <div class="modal-body">
           <p class="text-danger text-center" id="error_modal_curso"></p>
           <input type="text" id="curso_id_edit" name="curso_id_edit" hidden>
-          <label for="">Nome</label>
-          <input type="text" class="form-control" name="form_name_curso" id="form_name_curso">
-          <label for="form-name-codigo">Código do Curso</label>
+          <label for="form_curso">Nome</label>
+          <input type="text" class="form-control" name="form_curso" id="form_curso">
+          <label for="form_codigo_curso">Código do Curso</label>
           <input type="text" class="form-control" name="form_codigo_curso" id="form_codigo_curso">
         </div>
         <div class="modal-footer">
