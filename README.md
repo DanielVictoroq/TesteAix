@@ -4,5 +4,5 @@
 <p>npm install
 <p>npm run dev</p>
 
-## Importante
+# Importante
 <p>php artisan insert:situacao</p>
